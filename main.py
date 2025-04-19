@@ -19,8 +19,9 @@ convert_from = st.selectbox("Convert from:", ["km", "meter", "cm"])
 convert_to = st.selectbox("Convert to:", ["km", "meter", "cm"])
 
 if convert_from != convert_to:
-    result = converter(value, convert_from, convert_to)
-    st.write(f"{value} {convert_from} is equal to {result} {convert_to}")
+    if st.button("Convert"):
+        result = converter(value, convert_from, convert_to)
+        st.write(f"{value} {convert_from} is equal to {result} {convert_to}")
 else:
     st.write("Please select different units to convert.")
-    
+
